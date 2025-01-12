@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>548</width>
+    <height>538</height>
+   </rect>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>548</width>
+    <height>538</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:1, y1:1, x2:0, y2:0, stop:0 rgba(	255, 0, 0, 255), stop:0.427447 rgba(139, 0, 0, 125), stop:1 rgba(155, 79, 165, 255));
+font-famaly: Roboto Flex;</string>
+  </property>
+  <widget class="QWidget" name="widget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>-50</x>
+     <y>-70</y>
+     <width>641</width>
+     <height>721</height>
+    </rect>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>641</width>
+     <height>721</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color:rgba(225,255,255,100);
+border: 1px  solid rgba(225,255,255,40);
+border-radius: 7px;</string>
+   </property>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>80</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Добрый день Администратор</string>
+    </property>
+   </widget>
+   <widget class="QTableView" name="tableView">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>320</y>
+      <width>321</width>
+      <height>271</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>130</y>
+      <width>521</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>                                                                Ваш функционал </string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_otchet">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>160</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>отчет </string>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+      <normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_Exel">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>160</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Ехель</string>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+      <normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_start_day">
+    <property name="geometry">
+     <rect>
+      <x>390</x>
+      <y>160</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Начать </string>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+      <normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_end">
+    <property name="geometry">
+     <rect>
+      <x>500</x>
+      <y>550</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Выход</string>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+      <normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_end_day">
+    <property name="geometry">
+     <rect>
+      <x>470</x>
+      <y>160</y>
+      <width>111</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Закончить </string>
+    </property>
+    <property name="icon">
+     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+      <normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="D:/games/ворк/KP-main/res_rc.qrc"/>
+ </resources>
+ <connections/>
+</ui>

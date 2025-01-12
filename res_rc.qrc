@@ -1,0 +1,11 @@
+<RCC>
+  <qresource prefix="icons">
+    <file>icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>icon/image.png</file>
+    <file>icon/key.png</file>
+    <file>icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>icon/login.png</file>
+  </qresource>
+</RCC>
