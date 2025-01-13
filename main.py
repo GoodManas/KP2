@@ -11,7 +11,7 @@ from ui.ui_main import Ui_MainWindow
 from ui.ui_Admin2 import Ui_Admin
 from ui.rabotnok import UI_rabotnik
 from ui.manager import Ui_manager
-from api.user import login, register, get_all_users, start_day
+from api.user import login, register, get_all_users, start_day, end_day
 
 
 def check_input(funct):
@@ -37,10 +37,6 @@ class Register(QMainWindow):
         
     #авторизация и открытие окна 
     @check_input
-    
-    
-
-        
         
     def auth(self):
         name = self.ui.lineEditLog.text()
@@ -82,6 +78,8 @@ class Register(QMainWindow):
         self.dialog.btn_end.clicked.connect(self.end)
         self.dialog.btn_otchet.clicked.connect(self.show_users)
         self.dialog.btn_start_day.clicked.connect(self.Startt_day)
+        self.dialog.btn_end_day.clicked.connect(self.Endd_day)
+        
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
      
         
@@ -125,6 +123,8 @@ class Register(QMainWindow):
         
         self.manager.btn_end.clicked.connect(self.end)# кнопка закрыть приложение 
         self.manager.btn_otchet.clicked.connect(self.show_users_manager)#кнопка отчет
+        self.manager.btn_start_day.clicked.connect(self.Startt_day)
+        self.manager.btn_end.clicked.connect(self.Endd_day)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
         
         manager.exec()
@@ -176,8 +176,12 @@ class Register(QMainWindow):
 
     #=====================================================================
     
+    def Endd_day(self):
+        name = self.ui.lineEditLog.text()
+        passw = self.ui.lineEditPass.text()
+        end_day(name, passw)
         
-    
+    #=====================================================================
         
         
     

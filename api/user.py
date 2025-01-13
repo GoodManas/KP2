@@ -57,16 +57,18 @@ def start_day(login, passw):
     db.commit()
 #==============================================================================
 
-# #def admin_role_use(login, dol):   
-#     value = db.execute(f'''
-# 		SELECT * FROM users 
-# 		WHERE login='{login}'; 
-# 	''').fetchall()
+def end_day(login, passw):
+    value = db.execute(f'''
+		SELECT id_users, login, password, dol, start_day, end_day FROM users 
+		WHERE login='{login}' AND password='{passw}'; 
+	''').fetchone()
     
-#     if value:
-# 	    raise Exception("User with this login already exists")
-    
-#         db.execute("UPDATE users SET dol = ? WHERE login = ?", (dol, login))
+    if not value:
+        raise Exception("Пользователь не найден")
+
+    formatted_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+    db.execute("UPDATE users SET end_day = ? WHERE login = ?", (formatted_time, login))
+    db.commit()
 
 #==================================================================================
 
@@ -87,5 +89,3 @@ if __name__ == "__main__":
 
     except Exception as e:  # Обрабатываем исключения, если они возникают
         print(f"Error occurred: {e}")
-        
-    
