@@ -22,8 +22,7 @@ def login(login: str, passw: str):
             'dol': value[3],
             'start_day': value[4],
         }
-	raise Exception('Unauthorized')
-    
+	raise Exception(f'Unauthorized: User with login "{login}" not found or wrong password')
 
 #===============================================================================
 
@@ -44,35 +43,49 @@ def get_all_users():
     return value
 
 #=================================================================================
-def start_day(login):
-    print(f"Ищем пользователя с логином: {login}")  
-    value = db.execute('SELECT * FROM users WHERE login = ?', (login,)).fetchone()
+def start_day(login, passw):
+    value = db.execute(f'''
+		SELECT id_users, login, password, dol, start_day FROM users 
+		WHERE login='{login}' AND password='{passw}'; 
+	''').fetchone()
     
     if not value:
         raise Exception("Пользователь не найден")
-    
-   
+
     formatted_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     db.execute("UPDATE users SET start_day = ? WHERE login = ?", (formatted_time, login))
     db.commit()
-
 #==============================================================================
-if __name__ == "__main__":
-    try:
-        register("admin", "admin_password")
-    except Exception as e:
-        print("Registration error:", e)
 
-try:
-        
-        user = login("admin", "admin_password")  
-        
-        
+# #def admin_role_use(login, dol):   
+#     value = db.execute(f'''
+# 		SELECT * FROM users 
+# 		WHERE login='{login}'; 
+# 	''').fetchall()
+    
+#     if value:
+# 	    raise Exception("User with this login already exists")
+    
+#         db.execute("UPDATE users SET dol = ? WHERE login = ?", (dol, login))
+
+#==================================================================================
+
+
+if __name__ == "__main__":
+    user_login = "admin"  
+    user_password = "admin_password"
+    try:
+        user = login("admin", "admin_password")
+        print("Logged in user data:", user)  # Добавьте эту строку для отладки
+    
         user_login = user['login']
+        print("User login:", user_login)  # Также выводим логин
+
+        # Теперь вызываем функцию start_day с правильным логином
+        print(f"Calling start_day with login: {user_login}")
+        start_day(user_login)
+
+    except Exception as e:  # Обрабатываем исключения, если они возникают
+        print(f"Error occurred: {e}")
         
-        
-        start_day(user_login)  
-        print("Start day updated for admin.")
-        
-except Exception as e:
-        print("Error:", e)
+    

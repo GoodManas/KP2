@@ -37,6 +37,11 @@ class Register(QMainWindow):
         
     #авторизация и открытие окна 
     @check_input
+    
+    
+
+        
+        
     def auth(self):
         name = self.ui.lineEditLog.text()
         passw = self.ui.lineEditPass.text()
@@ -47,6 +52,8 @@ class Register(QMainWindow):
             
             position_id = user['dol']  
         
+            
+                    
             if position_id == 1:  # Например, 1 - это ID для администратора
                 self.open_ui_admin()
             elif position_id == 2:  # 2 - это ID для работника
@@ -65,7 +72,6 @@ class Register(QMainWindow):
     
     #окно с админом =================================================================
     def open_ui_admin(self):
-        
         print('открылось окно с админомм')
         
         dialog = QDialog(self)  # Создаем экземпляр QDialog
@@ -75,7 +81,7 @@ class Register(QMainWindow):
         #подключение Кнопок в ui админ 
         self.dialog.btn_end.clicked.connect(self.end)
         self.dialog.btn_otchet.clicked.connect(self.show_users)
-        self.dialog.btn_start_day.clicked.connect(start_day)
+        self.dialog.btn_start_day.clicked.connect(self.Startt_day)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
      
         
@@ -161,8 +167,19 @@ class Register(QMainWindow):
         
         
    #=====================================================================
-    
+   
+   
+    def Startt_day(self):
+        name = self.ui.lineEditLog.text()
+        passw = self.ui.lineEditPass.text()
+        start_day(name, passw)
 
+    #=====================================================================
+    
+        
+    
+        
+        
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)
