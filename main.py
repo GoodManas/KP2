@@ -1,5 +1,6 @@
 import sys
 import os
+
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from PySide6.QtWidgets import QMessageBox
@@ -11,7 +12,7 @@ from ui.ui_main import Ui_MainWindow
 from ui.ui_Admin2 import Ui_Admin
 from ui.rabotnok import UI_rabotnik
 from ui.manager import Ui_manager
-from api.user import login, register, get_all_users, start_day, end_day
+from api.user import login, register, get_all_users, start_day, end_day, exel
 
 
 def check_input(funct):
@@ -79,6 +80,7 @@ class Register(QMainWindow):
         self.dialog.btn_otchet.clicked.connect(self.show_users)
         self.dialog.btn_start_day.clicked.connect(self.Startt_day)
         self.dialog.btn_end_day.clicked.connect(self.Endd_day)
+        self.dialog.btn_Exel.clicked.connect(self,Exel)
         
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
      
@@ -102,7 +104,7 @@ class Register(QMainWindow):
         self.dialog.tableView.setModel(model)
         
     # #окно с рабом =================================================================
-    
+    4
     def open_ui_rabotnik(self):
         rab = QDialog(self)
         self.rab =  UI_rabotnik()
@@ -182,8 +184,11 @@ class Register(QMainWindow):
         end_day(name, passw)
         
     #=====================================================================
-        
-        
+
+    def Exel(self):
+        exel()
+
+    #===================================================================== 
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)

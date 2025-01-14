@@ -1,5 +1,8 @@
 from .db import db
 import datetime
+import pandas as pd   #  pip install pandas
+import sqlite3
+
 
 # Получаем текущее время
 current_time = datetime.datetime.now()
@@ -71,7 +74,14 @@ def end_day(login, passw):
     db.commit()
 
 #==================================================================================
+def exel():
 
+    conn = sqlite3.connect('db/time_tracking.db')
+    df = pd.read_sql('select * from users', conn)
+    df.to_excel(r'd:/games/result.xlsx', index=False)
+    conn.close()
+
+#====================================================================================
 
 if __name__ == "__main__":
     user_login = "admin"  
