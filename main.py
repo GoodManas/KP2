@@ -110,6 +110,8 @@ class Register(QMainWindow):
         self.rab.setupUi(rab) 
         
         self.rab.btn_end.clicked.connect(self.end)
+        self.rab.btn_end_day.clicked.connect(self.Endd_day)
+        self.rab.btn_start_day.clicked.connect(self.Startt_day)
         
         rab.exec()
     
@@ -125,7 +127,8 @@ class Register(QMainWindow):
         self.manager.btn_end.clicked.connect(self.end) # кнопка закрыть приложение 
         self.manager.btn_otchet.clicked.connect(self.show_users_manager) #кнопка отчет
         self.manager.btn_start_day.clicked.connect(self.Startt_day)
-        self.manager.btn_end.clicked.connect(self.Endd_day)
+        self.manager.btn_end_day.clicked.connect(self.Endd_day)
+        self.manager.btn_exel.clicked.connect(self.Exel)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
         
         manager.exec()

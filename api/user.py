@@ -78,6 +78,7 @@ def exel():
         conn = sqlite3.connect('db/time_tracking.db')
         df = pd.read_sql('SELECT * FROM users', conn)
         df.to_excel(r'd:/games/result.xlsx', index=False)
+        print("Файл успешно сохранен...")
     except Exception as e:
         print(f"Произошла ошибка: {e}")
     finally:
