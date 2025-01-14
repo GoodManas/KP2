@@ -1,9 +1,6 @@
 from .db import db
 import datetime
 
-# Получаем текущее время
-current_time = datetime.datetime.now()
-formatted_time = current_time.strftime('%Y-%m-%d %H:%M:%S')
 
 #функция входа===========================
 def login(login: str, passw: str):
@@ -68,9 +65,12 @@ def end_day(login, passw):
 
     formatted_time = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     db.execute("UPDATE users SET end_day = ? WHERE login = ?", (formatted_time, login))
+    db.execute("UPDATE users SET end_day = ? WHERE login = ?", (formatted_time, login))
     db.commit()
 
 #==================================================================================
+
+
 
 
 if __name__ == "__main__":
@@ -78,14 +78,13 @@ if __name__ == "__main__":
     user_password = "admin_password"
     try:
         user = login("admin", "admin_password")
-        print("Logged in user data:", user)  # Добавьте эту строку для отладки
-    
+        print("Logged in user data:", user)  
         user_login = user['login']
-        print("User login:", user_login)  # Также выводим логин
+        print("User login:", user_login)  
 
-        # Теперь вызываем функцию start_day с правильным логином
+        
         print(f"Calling start_day with login: {user_login}")
         start_day(user_login)
 
-    except Exception as e:  # Обрабатываем исключения, если они возникают
+    except Exception as e:  
         print(f"Error occurred: {e}")

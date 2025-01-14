@@ -70,9 +70,9 @@ class Register(QMainWindow):
     def open_ui_admin(self):
         print('открылось окно с админомм')
         
-        dialog = QDialog(self)  # Создаем экземпляр QDialog
-        self.dialog = Ui_Admin()  # Создаем экземпляр Ui_Dialog
-        self.dialog.setupUi(dialog)  # Настраиваем интерфейс диалога
+        dialog = QDialog(self)  
+        self.dialog = Ui_Admin()  
+        self.dialog.setupUi(dialog)  
        
         #подключение Кнопок в ui админ 
         self.dialog.btn_end.clicked.connect(self.end)
@@ -117,12 +117,12 @@ class Register(QMainWindow):
     
     def open_ui_manager(self):
         manager = QDialog(self)
-        self.manager =  Ui_manager()
+        self.manager =  Ui_manager() 
         self.manager.setupUi(manager)    
         
         
-        self.manager.btn_end.clicked.connect(self.end)# кнопка закрыть приложение 
-        self.manager.btn_otchet.clicked.connect(self.show_users_manager)#кнопка отчет
+        self.manager.btn_end.clicked.connect(self.end) # кнопка закрыть приложение 
+        self.manager.btn_otchet.clicked.connect(self.show_users_manager) #кнопка отчет
         self.manager.btn_start_day.clicked.connect(self.Startt_day)
         self.manager.btn_end.clicked.connect(self.Endd_day)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
