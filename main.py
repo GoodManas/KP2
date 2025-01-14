@@ -80,7 +80,7 @@ class Register(QMainWindow):
         self.dialog.btn_otchet.clicked.connect(self.show_users)
         self.dialog.btn_start_day.clicked.connect(self.Startt_day)
         self.dialog.btn_end_day.clicked.connect(self.Endd_day)
-        self.dialog.btn_Exel.clicked.connect(self,Exel)
+        self.dialog.btn_Exel.clicked.connect(self.Exel)
         
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
      
@@ -185,7 +185,7 @@ class Register(QMainWindow):
         
     #=====================================================================
 
-    def Exel(self):
+    def Exel():
         exel()
 
     #===================================================================== 

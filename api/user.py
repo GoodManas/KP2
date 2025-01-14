@@ -2,6 +2,7 @@ from .db import db
 import datetime
 import pandas as pd   #  pip install pandas
 import sqlite3
+import bcrypt
 
 
 # Получаем текущее время
@@ -82,6 +83,13 @@ def exel():
     conn.close()
 
 #====================================================================================
+
+# def hash_password(passw):
+#     # Генерация соли
+#     salt = bcrypt.gensalt()
+#     # Хэширование пароля
+#     hashed_password = bcrypt.hashpw(passw.encode('utf-8'), salt)
+#    return hashed_password
 
 if __name__ == "__main__":
     user_login = "admin"  
