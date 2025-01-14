@@ -1,5 +1,9 @@
 from .db import db
 import datetime
+import pandas as pd   #  pip install pandas
+import sqlite3
+import bcrypt
+
 
 
 #функция входа===========================
@@ -69,7 +73,21 @@ def end_day(login, passw):
     db.commit()
 
 #==================================================================================
+def exel():
 
+    conn = sqlite3.connect('db/time_tracking.db')
+    df = pd.read_sql('select * from users', conn)
+    df.to_excel(r'd:/games/result.xlsx', index=False)
+    conn.close()
+
+#====================================================================================
+
+# def hash_password(passw):
+#     # Генерация соли
+#     salt = bcrypt.gensalt()
+#     # Хэширование пароля
+#     hashed_password = bcrypt.hashpw(passw.encode('utf-8'), salt)
+#    return hashed_password
 
 
 
