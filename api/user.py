@@ -1,8 +1,8 @@
 from .db import db
 import datetime
-import pandas as pd   #  pip install pandas
 import sqlite3
-import bcrypt
+import pandas as pd
+# import bcrypt
 
 
 
@@ -74,12 +74,14 @@ def end_day(login, passw):
 
 #==================================================================================
 def exel():
-
-    conn = sqlite3.connect('db/time_tracking.db')
-    df = pd.read_sql('select * from users', conn)
-    df.to_excel(r'd:/games/result.xlsx', index=False)
-    conn.close()
-
+    try:
+        conn = sqlite3.connect('db/time_tracking.db')
+        df = pd.read_sql('SELECT * FROM users', conn)
+        df.to_excel(r'd:/games/result.xlsx', index=False)
+    except Exception as e:
+        print(f"Произошла ошибка: {e}")
+    finally:
+        conn.close()
 #====================================================================================
 
 # def hash_password(passw):

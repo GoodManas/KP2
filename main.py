@@ -1,6 +1,5 @@
 import sys
 import os
-
 from PySide6 import QtWidgets
 from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
 from PySide6.QtWidgets import QMessageBox
@@ -104,7 +103,7 @@ class Register(QMainWindow):
         self.dialog.tableView.setModel(model)
         
     # #окно с рабом =================================================================
-    4
+    
     def open_ui_rabotnik(self):
         rab = QDialog(self)
         self.rab =  UI_rabotnik()
@@ -184,11 +183,9 @@ class Register(QMainWindow):
         end_day(name, passw)
         
     #=====================================================================
-
-    def Exel():
+    def Exel(self):
         exel()
-
-    #===================================================================== 
+        
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)
