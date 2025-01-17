@@ -70,9 +70,9 @@ class Register(QMainWindow):
     def open_ui_admin(self):
         print('открылось окно с админомм')
         
-        dialog = QDialog(self)  
-        self.dialog = Ui_Admin()  
-        self.dialog.setupUi(dialog)  
+        dialog = QDialog(self)  # Создаем экземпляр QDialog
+        self.dialog = Ui_Admin()  # Создаем экземпляр Ui_Dialog
+        self.dialog.setupUi(dialog)  # Настраиваем интерфейс диалога
        
         #подключение Кнопок в ui админ 
         self.dialog.btn_end.clicked.connect(self.end)
@@ -80,11 +80,34 @@ class Register(QMainWindow):
         self.dialog.btn_start_day.clicked.connect(self.Startt_day)
         self.dialog.btn_end_day.clicked.connect(self.Endd_day)
         self.dialog.btn_Exel.clicked.connect(self.Exel)
+
+
+        
+        self.save_button.clicked.connect(self.save_changes) #надо обновить ui admin добавить кнопку с сохранением в бд + расширить Qtableviev 
+        self.btn_delete.clicked.connect(self.delete_row)
+        dialog.exec() 
+
+        #====================================================================================
+    def delete_row(self):
+        selected_index = self.table_view.currentIndex()
+        if selected_index.isValid():
+            row = selected_index.row()
+            self.model.removeRow(row)  # Удаление строки из модели
+            if self.model.submitAll():
+                print("Строка удалена.")
+            else:
+                print("Ошибка при удалении строки:", self.model.lastError().text())
+        else:
+            QMessageBox.warning(self, "Ошибка", "Пожалуйста, выберите строку для удаления.")
+        #=============================================================================
+    def save_changes(self):
+        if self.model.submitAll():
+            print("Изменения сохранены.")
+        else:
+            print("Ошибка при сохранении изменений:", self.model.lastError().text())
         
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
-     
-        
-        dialog.exec() 
+
         
         #=============================================================================
         #Функция для показа отчета admin
@@ -103,15 +126,13 @@ class Register(QMainWindow):
         self.dialog.tableView.setModel(model)
         
     # #окно с рабом =================================================================
-    
+    4
     def open_ui_rabotnik(self):
         rab = QDialog(self)
         self.rab =  UI_rabotnik()
         self.rab.setupUi(rab) 
         
         self.rab.btn_end.clicked.connect(self.end)
-        self.rab.btn_end_day.clicked.connect(self.Endd_day)
-        self.rab.btn_start_day.clicked.connect(self.Startt_day)
         
         rab.exec()
     
@@ -120,15 +141,14 @@ class Register(QMainWindow):
     
     def open_ui_manager(self):
         manager = QDialog(self)
-        self.manager =  Ui_manager() 
+        self.manager =  Ui_manager()
         self.manager.setupUi(manager)    
         
         
-        self.manager.btn_end.clicked.connect(self.end) # кнопка закрыть приложение 
-        self.manager.btn_otchet.clicked.connect(self.show_users_manager) #кнопка отчет
+        self.manager.btn_end.clicked.connect(self.end)# кнопка закрыть приложение 
+        self.manager.btn_otchet.clicked.connect(self.show_users_manager)#кнопка отчет
         self.manager.btn_start_day.clicked.connect(self.Startt_day)
-        self.manager.btn_end_day.clicked.connect(self.Endd_day)
-        self.manager.btn_exel.clicked.connect(self.Exel)
+        self.manager.btn_end.clicked.connect(self.Endd_day)
         self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
         
         manager.exec()
@@ -186,9 +206,11 @@ class Register(QMainWindow):
         end_day(name, passw)
         
     #=====================================================================
-    def Exel(self):
+
+    def Exel():
         exel()
-        
+
+    #===================================================================== 
     
 if __name__ == "__main__":
     app = QApplication(sys.argv)
