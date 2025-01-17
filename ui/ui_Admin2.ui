@@ -60,9 +60,9 @@ border-radius: 7px;</string>
     <property name="geometry">
      <rect>
       <x>60</x>
-      <y>320</y>
-      <width>321</width>
-      <height>271</height>
+      <y>190</y>
+      <width>521</width>
+      <height>371</height>
      </rect>
     </property>
    </widget>
@@ -100,8 +100,8 @@ background-color:rgba(255,255,255,60)
      <string>отчет </string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
-      <normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+     <iconset resource="res-admin.qrc">
+      <normaloff>:/icon/D:/games/ворк/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icon/D:/games/ворк/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_Exel">
@@ -125,8 +125,8 @@ background-color:rgba(255,255,255,60)
      <string>Ехель</string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
-      <normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+     <iconset resource="res-admin.qrc">
+      <normaloff>:/icon/D:/games/ворк/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icon/D:/games/ворк/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_start_day">
@@ -150,15 +150,15 @@ background-color:rgba(255,255,255,60)
      <string>Начать </string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
-      <normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+     <iconset resource="res-admin.qrc">
+      <normaloff>:/icon/D:/games/ворк/KP2/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icon/D:/games/ворк/KP2/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_end">
     <property name="geometry">
      <rect>
-      <x>500</x>
-      <y>550</y>
+      <x>510</x>
+      <y>570</y>
       <width>75</width>
       <height>24</height>
      </rect>
@@ -175,8 +175,8 @@ background-color:rgba(255,255,255,60)
      <string>Выход</string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
-      <normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+     <iconset resource="res-admin.qrc">
+      <normaloff>:/icon/D:/games/ворк/KP2/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icon/D:/games/ворк/KP2/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
    <widget class="QPushButton" name="btn_end_day">
@@ -200,14 +200,56 @@ background-color:rgba(255,255,255,60)
      <string>Закончить </string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
-      <normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+     <iconset resource="res-admin.qrc">
+      <normaloff>:/icon/D:/games/ворк/KP2/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icon/D:/games/ворк/KP2/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_save">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>570</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Добавить</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="btn_delete">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>570</y>
+      <width>75</width>
+      <height>24</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton:hover{
+background-color:rgba(255,255,255,40)
+}
+QPushButton:pressed{
+background-color:rgba(255,255,255,60)
+}</string>
+    </property>
+    <property name="text">
+     <string>Удалить</string>
     </property>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="D:/games/ворк/KP-main/res_rc.qrc"/>
+  <include location="res-admin.qrc"/>
  </resources>
  <connections/>
 </ui>

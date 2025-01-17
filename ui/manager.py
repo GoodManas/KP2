@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHeaderView, QLabel,
     QPushButton, QSizePolicy, QTableView, QWidget)
-import res_rc
+import ui.res_rs
 
 class Ui_manager(object):
     def setupUi(self, Dialog):

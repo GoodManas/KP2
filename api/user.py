@@ -85,6 +85,50 @@ def exel():
         conn.close()
 #====================================================================================
 
+
+def ADD_emp(name, passw, dol, login, password):
+    
+    value = db.execute(f'''
+		SELECT id_users, login, password, dol, start_day, end_day FROM users 
+		WHERE login='{login}' AND password='{password}'; 
+	''').fetchone()
+    
+    if not value:
+        raise Exception("Пользователь не найден")    
+    
+    try:
+        query = '''
+            INSERT INTO users (login, password, dol) VALUES (?, ?, ?);
+        '''
+        db.execute(query, (name, passw, dol))  # Используем параметризованный запрос
+        db.commit()  # Сохраняем изменения в базе данных
+        print("Сотрудник добавлен.")
+    except sqlite3.IntegrityError:
+        print("Ошибка: Логин уже существует.")
+    except Exception as e:
+        print(f"Ошибка при добавлении сотрудника: {str(e)}")
+#====================================================================================
+def DELETE_emp(name, login, password):
+    
+    value = db.execute(f'''
+		SELECT id_users, login, password, dol, start_day, end_day FROM users 
+		WHERE login='{login}' AND password='{password}'; 
+	''').fetchone()
+    
+    if not value:
+        raise Exception("Пользователь не найден")    
+    
+    try:
+        query = '''
+            DELETE FROM users WHERE id_users = ?;
+        '''
+        db.execute(query, (name,))  # Используем параметризованный запрос
+        db.commit()  # Сохраняем изменения в базе данных
+        print("Сотрудник удален.")
+    except sqlite3.IntegrityError:
+        print("Ошибка: ID уже удаленно.")
+    except Exception as e:
+        print(f"Ошибка при удалении сотрудника: {str(e)}")
 # def hash_password(passw):
 #     # Генерация соли
 #     salt = bcrypt.gensalt()
@@ -92,7 +136,7 @@ def exel():
 #     hashed_password = bcrypt.hashpw(passw.encode('utf-8'), salt)
 #    return hashed_password
 
-
+#====================================================================================
 
 if __name__ == "__main__":
     user_login = "admin"  

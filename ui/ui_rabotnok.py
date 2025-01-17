@@ -17,9 +17,9 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHeaderView, QLabel,
     QPushButton, QSizePolicy, QTableView, QWidget)
-import res_rc
+import ui.res_rs
 
-class UI_rabotnik(object):
+class Ui_rabotnok(object):
     def setupUi(self, Dialog):
         if not Dialog.objectName():
             Dialog.setObjectName(u"Dialog")

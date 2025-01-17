@@ -1,17 +1,19 @@
 import sys
 import os
 from PySide6 import QtWidgets
-from PySide6.QtWidgets import QApplication, QMainWindow, QDialog
+from PySide6.QtWidgets import QApplication, QMainWindow, QDialog, QTableView
 from PySide6.QtWidgets import QMessageBox
 from PySide6.QtGui import QStandardItemModel, QStandardItem
-
+from PySide6.QtSql import QSqlDatabase, QSqlTableModel
 
 # Ваши импорты для CheckThread и Ui_MainWindow
 from ui.ui_main import Ui_MainWindow
-from ui.ui_Admin2 import Ui_Admin
-from ui.rabotnok import UI_rabotnik
+from ui.ui_admin2 import Ui_Admin
+from ui.ui_rabotnok import Ui_rabotnok
 from ui.manager import Ui_manager
-from api.user import login, register, get_all_users, start_day, end_day, exel
+from ui.ui_add_emp import Ui_add
+from ui.ui_delete import Ui_delete
+from api.user import login, register, get_all_users, start_day, end_day, exel, ADD_emp, DELETE_emp
 
 
 def check_input(funct):
@@ -80,36 +82,15 @@ class Register(QMainWindow):
         self.dialog.btn_start_day.clicked.connect(self.Startt_day)
         self.dialog.btn_end_day.clicked.connect(self.Endd_day)
         self.dialog.btn_Exel.clicked.connect(self.Exel)
+        self.dialog.btn_save.clicked.connect(self.ui_add_emp)
+        self.dialog.btn_delete.clicked.connect(self.ui_delete)
 
 
-        
-        self.save_button.clicked.connect(self.save_changes) #надо обновить ui admin добавить кнопку с сохранением в бд + расширить Qtableviev 
-        self.btn_delete.clicked.connect(self.delete_row)
+
         dialog.exec() 
 
         #====================================================================================
-    def delete_row(self):
-        selected_index = self.table_view.currentIndex()
-        if selected_index.isValid():
-            row = selected_index.row()
-            self.model.removeRow(row)  # Удаление строки из модели
-            if self.model.submitAll():
-                print("Строка удалена.")
-            else:
-                print("Ошибка при удалении строки:", self.model.lastError().text())
-        else:
-            QMessageBox.warning(self, "Ошибка", "Пожалуйста, выберите строку для удаления.")
-        #=============================================================================
-    def save_changes(self):
-        if self.model.submitAll():
-            print("Изменения сохранены.")
-        else:
-            print("Ошибка при сохранении изменений:", self.model.lastError().text())
-        
-        self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
 
-        
-        #=============================================================================
         #Функция для показа отчета admin
     def show_users(self):
        
@@ -125,19 +106,77 @@ class Register(QMainWindow):
         
         self.dialog.tableView.setModel(model)
         
-    # #окно с рабом =================================================================
-    4
+        
+        
+    # =================================================================    
+    def ui_add_emp(self):
+        add = QDialog(self)
+        self.add =  Ui_add()
+        self.add.setupUi(add) 
+        
+        
+                
+        self.add.btn_end.clicked.connect(self.end)
+        self.add.btn_save.clicked.connect(self.add_emp)
+        
+        add.exec()
+        
+    
+    #  =================================================================    
+    def ui_delete(self):
+        delete = QDialog(self)
+        self.delete =  Ui_delete()
+        self.delete.setupUi(delete) 
+        
+        
+                
+        self.delete.btn_end.clicked.connect(self.end)
+        self.delete.btn_delete.clicked.connect(self.delete_emp)
+        
+        delete.exec()    
+    #  =================================================================
+    def delete_emp(self):
+        name = self.delete.lineID.text()
+        login = self.ui.lineEditLog.text()
+        password = self.ui.lineEditPass.text()
+        
+        if name:
+            DELETE_emp(name, login, password)
+        else:
+            QMessageBox.warning(self, "Ошибка", "Пожалуйста, заполните все поля.")
+        
+    #  =================================================================  
+    def add_emp(self):
+        name = self.add.lineLogin.text()
+        passw = self.add.linePassword.text()
+        dol = self.add.lineDol.text()
+        login = self.ui.lineEditLog.text()
+        password = self.ui.lineEditPass.text()
+        
+        print(name, passw, dol, login, password)
+    
+        if name and passw and dol:  # Проверяем, что все поля заполнены
+            ADD_emp(name, passw, dol, login, password)
+        else:
+            QMessageBox.warning(self, "Ошибка", "Пожалуйста, заполните все поля.")    
+
+        
+        
+    #  =================================================================
+    
     def open_ui_rabotnik(self):
         rab = QDialog(self)
-        self.rab =  UI_rabotnik()
+        self.rab =  Ui_rabotnok()
         self.rab.setupUi(rab) 
         
         self.rab.btn_end.clicked.connect(self.end)
+        self.rab.btn_start_day.clicked.connect(self.Startt_day)
+        self.rab.btn_end_day.clicked.connect(self.Endd_day)
         
         rab.exec()
     
     
-    #окно с менеджером =================================================================
+    #  =================================================================
     
     def open_ui_manager(self):
         manager = QDialog(self)
@@ -148,8 +187,8 @@ class Register(QMainWindow):
         self.manager.btn_end.clicked.connect(self.end)# кнопка закрыть приложение 
         self.manager.btn_otchet.clicked.connect(self.show_users_manager)#кнопка отчет
         self.manager.btn_start_day.clicked.connect(self.Startt_day)
-        self.manager.btn_end.clicked.connect(self.Endd_day)
-        self.base_lane_edit = [self.ui.lineEditLog, self.ui.lineEditPass]
+        self.manager.btn_end_day.clicked.connect(self.Endd_day)
+        
         
         manager.exec()
         

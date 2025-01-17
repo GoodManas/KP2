@@ -19,7 +19,7 @@ from PySide6.QtWidgets import (QApplication, QFrame, QHBoxLayout, QLabel,
     QLineEdit, QMainWindow, QPushButton, QSizePolicy,
     QVBoxLayout, QWidget)
 
-import res_rc
+import ui.res_rs
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -40,11 +40,12 @@ class Ui_MainWindow(object):
         self.RANEPA_png.setGeometry(QRect(150, 10, 281, 151))
         self.RANEPA_png.setStyleSheet(u"background-color:rgba(255,255,255,0);\n"
 "border: 0px solid rgba(0,0,0,0);")
-        self.RANEPA_png.setPixmap(QPixmap(u":/icons/icon/image.png"))
+        self.RANEPA_png.setPixmap(QPixmap(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/image.png"))
         self.Balance_frame = QFrame(self.centralwidget)
         self.Balance_frame.setObjectName(u"Balance_frame")
         self.Balance_frame.setGeometry(QRect(180, 190, 211, 301))
-        self.Balance_frame.setStyleSheet(u"background-color:rgba(255,255,255,100)")
+        self.Balance_frame.setStyleSheet(u"background-color:rgba(255,255,255,100);\n"
+"color: black;")
         self.verticalLayout = QVBoxLayout(self.Balance_frame)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.Login = QLabel(self.Balance_frame)
@@ -90,7 +91,7 @@ class Ui_MainWindow(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/icons/icon/login.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/login.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_login.setIcon(icon)
         self.btn_login.setIconSize(QSize(24, 24))
 
@@ -106,7 +107,7 @@ class Ui_MainWindow(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icon/key.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/key.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_register.setIcon(icon1)
         self.btn_register.setIconSize(QSize(24, 24))
 

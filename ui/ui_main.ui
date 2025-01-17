@@ -52,7 +52,7 @@ border: 0px solid rgba(0,0,0,0);</string>
      <string/>
     </property>
     <property name="pixmap">
-     <pixmap resource="res_rs.qrc">:/icons/icon/image.png</pixmap>
+     <pixmap resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">:/icon/D:/games/ворк/KP2/icon/image.png</pixmap>
     </property>
    </widget>
    <widget class="QFrame" name="Balance_frame">
@@ -65,7 +65,8 @@ border: 0px solid rgba(0,0,0,0);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(255,255,255,100)</string>
+     <string notr="true">background-color:rgba(255,255,255,100);
+color: black;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
@@ -128,9 +129,8 @@ background-color:rgba(255,255,255,60)
            <string>Вход</string>
           </property>
           <property name="icon">
-            <iconset resource="res_rs.qrc">
-              <normaloff>:/icons/icon/login.png</normaloff>:/icons/icon/login.png
-            </iconset>
+           <iconset resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+            <normaloff>:/icon/D:/games/ворк/KP2/icon/login.png</normaloff>:/icon/D:/games/ворк/KP2/icon/login.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -160,9 +160,8 @@ background-color:rgba(255,255,255,60)
            <string>Регистрация</string>
           </property>
           <property name="icon">
-            <iconset resource="res_rs.qrc">
-              <normaloff>:/icons/icon/key.png</normaloff>:/icons/icon/key.png
-            </iconset>
+           <iconset resource="../../../../../../../../../../../Program Files/games/12/res-rs.qrc">
+            <normaloff>:/icon/D:/games/ворк/KP2/icon/key.png</normaloff>:/icon/D:/games/ворк/KP2/icon/key.png</iconset>
           </property>
           <property name="iconSize">
            <size>
@@ -180,7 +179,7 @@ background-color:rgba(255,255,255,60)
   </widget>
  </widget>
  <resources>
-  <include location="res_rs.qrc"/>
+  <include location="../../../../../../../../../../../Program Files/games/12/res-rs.qrc"/>
  </resources>
  <connections/>
 </ui>

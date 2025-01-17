@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>D:/games/ворк/KP2/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>D:/games/ворк/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>D:/games/ворк/KP2/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+    <file>D:/games/ворк/KP2/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</file>
+  </qresource>
+</RCC>

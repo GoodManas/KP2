@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>D:/games/ворк/KP2/icon/image.png</file>
+    <file>D:/games/ворк/KP2/icon/key.png</file>
+    <file>D:/games/ворк/KP2/icon/login.png</file>
+  </qresource>
+</RCC>

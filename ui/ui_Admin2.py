@@ -17,7 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHeaderView, QLabel,
     QPushButton, QSizePolicy, QTableView, QWidget)
-import res_rc
+import ui.res_admin
 
 class Ui_Admin(object):
     def setupUi(self, Dialog):
@@ -39,7 +39,7 @@ class Ui_Admin(object):
         self.label.setGeometry(QRect(60, 80, 171, 41))
         self.tableView = QTableView(self.widget)
         self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(60, 320, 321, 271))
+        self.tableView.setGeometry(QRect(60, 190, 521, 371))
         self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
         self.label_2.setGeometry(QRect(60, 130, 521, 20))
@@ -53,7 +53,7 @@ class Ui_Admin(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon = QIcon()
-        icon.addFile(u":/icons/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/lab_profile_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_otchet.setIcon(icon)
         self.btn_Exel = QPushButton(self.widget)
         self.btn_Exel.setObjectName(u"btn_Exel")
@@ -75,11 +75,11 @@ class Ui_Admin(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon1 = QIcon()
-        icon1.addFile(u":/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon1.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_start_day.setIcon(icon1)
         self.btn_end = QPushButton(self.widget)
         self.btn_end.setObjectName(u"btn_end")
-        self.btn_end.setGeometry(QRect(500, 550, 75, 24))
+        self.btn_end.setGeometry(QRect(510, 570, 75, 24))
         self.btn_end.setStyleSheet(u"QPushButton:hover{\n"
 "background-color:rgba(255,255,255,40)\n"
 "}\n"
@@ -87,7 +87,7 @@ class Ui_Admin(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon2 = QIcon()
-        icon2.addFile(u":/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon2.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_end.setIcon(icon2)
         self.btn_end_day = QPushButton(self.widget)
         self.btn_end_day.setObjectName(u"btn_end_day")
@@ -99,8 +99,26 @@ class Ui_Admin(object):
 "background-color:rgba(255,255,255,60)\n"
 "}")
         icon3 = QIcon()
-        icon3.addFile(u":/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
+        icon3.addFile(u":/icon/D:/games/\u0432\u043e\u0440\u043a/KP2/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_end_day.setIcon(icon3)
+        self.btn_save = QPushButton(self.widget)
+        self.btn_save.setObjectName(u"btn_save")
+        self.btn_save.setGeometry(QRect(70, 570, 75, 24))
+        self.btn_save.setStyleSheet(u"QPushButton:hover{\n"
+"background-color:rgba(255,255,255,40)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color:rgba(255,255,255,60)\n"
+"}")
+        self.btn_delete = QPushButton(self.widget)
+        self.btn_delete.setObjectName(u"btn_delete")
+        self.btn_delete.setGeometry(QRect(150, 570, 75, 24))
+        self.btn_delete.setStyleSheet(u"QPushButton:hover{\n"
+"background-color:rgba(255,255,255,40)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color:rgba(255,255,255,60)\n"
+"}")
 
         self.retranslateUi(Dialog)
 
@@ -116,5 +134,7 @@ class Ui_Admin(object):
         self.btn_start_day.setText(QCoreApplication.translate("Dialog", u"\u041d\u0430\u0447\u0430\u0442\u044c ", None))
         self.btn_end.setText(QCoreApplication.translate("Dialog", u"\u0412\u044b\u0445\u043e\u0434", None))
         self.btn_end_day.setText(QCoreApplication.translate("Dialog", u"\u0417\u0430\u043a\u043e\u043d\u0447\u0438\u0442\u044c ", None))
+        self.btn_save.setText(QCoreApplication.translate("Dialog", u"\u0414\u043e\u0431\u0430\u0432\u0438\u0442\u044c", None))
+        self.btn_delete.setText(QCoreApplication.translate("Dialog", u"\u0423\u0434\u0430\u043b\u0438\u0442\u044c", None))
     # retranslateUi
 

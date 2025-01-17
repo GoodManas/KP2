@@ -100,7 +100,7 @@ background-color:rgba(255,255,255,60)
      <string>Начать </string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+     <iconset>
       <normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/start_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
@@ -125,7 +125,7 @@ background-color:rgba(255,255,255,60)
      <string>Закончить </string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+     <iconset>
       <normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/pin_end_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
@@ -150,14 +150,14 @@ background-color:rgba(255,255,255,60)
      <string>Выход</string>
     </property>
     <property name="icon">
-     <iconset resource="D:/games/ворк/KP-main/res_rc.qrc">
+     <iconset>
       <normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</normaloff>:/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png</iconset>
     </property>
    </widget>
   </widget>
  </widget>
  <resources>
-  <include location="D:/games/ворк/KP-main/res_rc.qrc"/>
+  <include location="D:/games/ворк/KP2/res-rs.qrc"/>
  </resources>
  <connections/>
 </ui>
