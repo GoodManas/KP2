@@ -56,7 +56,7 @@ class Ui_MainWindow(object):
 
         self.lineEditLog = QLineEdit(self.Balance_frame)
         self.lineEditLog.setObjectName(u"lineEditLog")
-
+        self.lineEditLog.setPlaceholderText("Введите логин")  
         self.verticalLayout.addWidget(self.lineEditLog)
 
         self.Password = QLabel(self.Balance_frame)
@@ -67,7 +67,7 @@ class Ui_MainWindow(object):
 
         self.lineEditPass = QLineEdit(self.Balance_frame)
         self.lineEditPass.setObjectName(u"lineEditPass")
-
+        self.lineEditPass.setPlaceholderText("Введите пароль")
         self.verticalLayout.addWidget(self.lineEditPass)
 
         self.reg_and_log = QFrame(self.Balance_frame)

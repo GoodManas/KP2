@@ -9,7 +9,7 @@ from PySide6.QtSql import QSqlDatabase, QSqlTableModel
 # Ваши импорты для CheckThread и Ui_MainWindow
 from ui.ui_main import Ui_MainWindow
 from ui.ui_admin2 import Ui_Admin
-from ui.ui_rabotnok import Ui_rabotnok
+from ui.rabotnik import Ui_rabotnok
 from ui.manager import Ui_manager
 from ui.ui_add_emp import Ui_add
 from ui.ui_delete import Ui_delete
@@ -108,7 +108,24 @@ class Register(QMainWindow):
         
         
         
-    # =================================================================    
+    # =================================================================  
+    def show_users_rab(self):
+        users = get_all_users()
+    
+
+        needed_columns_indices = [0, 4, 5]  
+    
+    
+        model = QStandardItemModel(len(users), len(needed_columns_indices))  
+        model.setHorizontalHeaderLabels(["login", "start_day", "end_day"])  
+    
+    
+        for row_idx, row_data in enumerate(users):
+            for new_col_idx, old_col_idx in enumerate(needed_columns_indices):
+                model.setItem(row_idx, new_col_idx, QStandardItem(str(row_data[old_col_idx])))  
+        
+        self.rab.tableView.setModel(model)
+    # =================================================================  
     def ui_add_emp(self):
         add = QDialog(self)
         self.add =  Ui_add()
@@ -170,6 +187,7 @@ class Register(QMainWindow):
         self.rab.setupUi(rab) 
         
         self.rab.btn_end.clicked.connect(self.end)
+        self.rab.btn_end_day_2.clicked.connect(self.show_users_rab)
         self.rab.btn_start_day.clicked.connect(self.Startt_day)
         self.rab.btn_end_day.clicked.connect(self.Endd_day)
         
@@ -197,16 +215,19 @@ class Register(QMainWindow):
        # =================================================================
        # Функция для работы с QTableView из ui мэнеджер
     def show_users_manager(self):
-        
         users = get_all_users()
-        
-        # модель для QTableView
-        model = QStandardItemModel(len(users), 6)  # Измените количество столбцов в соответствии с вашей таблицей
-        model.setHorizontalHeaderLabels(["id", "login", "password"])  # Замените на ваши реальные названия столбцов
-        
+    
+    
+        needed_columns_indices = [0, 1, 4, 5]  
+    
+   
+        model = QStandardItemModel(len(users), len(needed_columns_indices))  # Ограничиваем количество столбцов
+        model.setHorizontalHeaderLabels(["id", "login", "start_day", "end_day"])  # Заголовки для нужных полей
+    
+    
         for row_idx, row_data in enumerate(users):
-            for col_idx, item in enumerate(row_data):
-                model.setItem(row_idx, col_idx, QStandardItem(str(item)))  
+            for new_col_idx, old_col_idx in enumerate(needed_columns_indices):
+                model.setItem(row_idx, new_col_idx, QStandardItem(str(row_data[old_col_idx])))  
         
         self.manager.tableView.setModel(model)
         

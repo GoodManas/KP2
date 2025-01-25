@@ -9,7 +9,7 @@ CREATE TABLE "users" (
 	"id_users"	INTEGER,
 	"login"	TEXT NOT NULL UNIQUE,
 	"password"	TEXT NOT NULL,
-	"dol"	INTEGER DEFAULT 1,
+	"dol"	INTEGER DEFAULT 2,
 	"start_day"	TEXT,
 	"end_day"	TEXT,
 	PRIMARY KEY("id_users"),

@@ -17,6 +17,7 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QPalette, QPixmap, QRadialGradient, QTransform)
 from PySide6.QtWidgets import (QApplication, QDialog, QHeaderView, QLabel,
     QPushButton, QSizePolicy, QTableView, QWidget)
+
 import ui.res_rs
 
 class Ui_rabotnok(object):
@@ -42,7 +43,7 @@ class Ui_rabotnok(object):
         self.label_2.setGeometry(QRect(20, 70, 501, 20))
         self.tableView = QTableView(self.widget)
         self.tableView.setObjectName(u"tableView")
-        self.tableView.setGeometry(QRect(20, 250, 321, 271))
+        self.tableView.setGeometry(QRect(20, 160, 511, 321))
         self.btn_start_day = QPushButton(self.widget)
         self.btn_start_day.setObjectName(u"btn_start_day")
         self.btn_start_day.setGeometry(QRect(140, 100, 75, 24))
@@ -79,6 +80,16 @@ class Ui_rabotnok(object):
         icon2 = QIcon()
         icon2.addFile(u":/icons/icon/exit_to_app_24dp_E8EAED_FILL0_wght400_GRAD0_opsz24.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.btn_end.setIcon(icon2)
+        self.btn_end_day_2 = QPushButton(self.widget)
+        self.btn_end_day_2.setObjectName(u"btn_end_day_2")
+        self.btn_end_day_2.setGeometry(QRect(340, 100, 111, 24))
+        self.btn_end_day_2.setStyleSheet(u"QPushButton:hover{\n"
+"background-color:rgba(255,255,255,40)\n"
+"}\n"
+"QPushButton:pressed{\n"
+"background-color:rgba(255,255,255,60)\n"
+"}")
+        self.btn_end_day_2.setIcon(icon1)
 
         self.retranslateUi(Dialog)
 
@@ -92,5 +103,6 @@ class Ui_rabotnok(object):
         self.btn_start_day.setText(QCoreApplication.translate("Dialog", u"\u041d\u0430\u0447\u0430\u0442\u044c ", None))
         self.btn_end_day.setText(QCoreApplication.translate("Dialog", u"\u0417\u0430\u043a\u043e\u043d\u0447\u0438\u0442\u044c ", None))
         self.btn_end.setText(QCoreApplication.translate("Dialog", u"\u0412\u044b\u0445\u043e\u0434", None))
+        self.btn_end_day_2.setText(QCoreApplication.translate("Dialog", u"\u0421\u0442\u0430\u0442\u0443\u0441 \u0440\u0430\u0431\u043e\u0442\u043d\u0438\u043a\u043e\u0432", None))
     # retranslateUi
 
